@@ -37,7 +37,7 @@ jobs:
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
-          html_path: ${{ env.PUBLISH_DIR }}/wwwroot/index.html
+          html_path: ${{ env.PUBLISH_DIR }}wwwroot/index.html
           base_href: /${{ github.event.repository.name }}/
           
   # Deployment job
