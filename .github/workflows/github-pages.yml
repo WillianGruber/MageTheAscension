@@ -2,7 +2,7 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 env:
-  PUBLISH_DIR: home/runner/work/MageTheAscension/MageTheAscension/MageTheAscension/bin/Release/net7.0/wwwroot
+  PUBLISH_DIR: /home/runner/work/MageTheAscension/MageTheAscension/MageTheAscension/bin/Release/net7.0/wwwroot
   
 on:
   # Runs on pushes targeting the default branch
