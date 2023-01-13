@@ -2,7 +2,7 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 env:
-  PUBLISH_DIR: /home/runner/work/MageTheAscension/MageTheAscension/MageTheAscension/bin/Release/net7.0/wwwroot
+  PUBLISH_DIR: bin/Release/net7.0/publish/
   
 on:
   # Runs on pushes targeting the default branch
@@ -32,14 +32,13 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Publish app
-        run: dotnet publish -c Release
+        run: dotnet publish -c Release --output  ${{ env.PUBLISH_DIR }}
       
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
-          html_path: ${{ env.PUBLISH_DIR }}/index.html
+          html_path: ${{ env.PUBLISH_DIR }}/wwwroot/index.html
           base_href: /${{ github.event.repository.name }}/
-          root_path: ${{ env.PUBLISH_DIR }}
           
   # Deployment job
   deploy:
