@@ -31,8 +31,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-#      - name: Publish app
-#        run: dotnet publish -c Release
+      - name: Publish app
+        run: dotnet publish -c Release
       
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
