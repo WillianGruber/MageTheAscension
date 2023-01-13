@@ -56,7 +56,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Upload Artifact GitHub Action
-        uses: actions/upload-artifact@v2
+        #uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with: 
           name: github-pages
           path: ${{ env.PUBLISH_DIR }}wwwroot
