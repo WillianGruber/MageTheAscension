@@ -2,7 +2,7 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 env:
-  PUBLISH_DIR: bin/Release/publish/wwwroot
+  PUBLISH_DIR: bin/Release/net7.0/publish/wwwroot
   
 on:
   # Runs on pushes targeting the default branch
