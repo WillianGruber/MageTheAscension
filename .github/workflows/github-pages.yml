@@ -54,6 +54,12 @@ jobs:
           build_dir: ${{ env.PUBLISH_DIR }}wwwroot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: github-pages
+          path: ${{ env.PUBLISH_DIR }}wwwroot
 
   # Deployment job
   deploy:
