@@ -7,16 +7,23 @@
             </MudText>
         </MudItem>
     }
-    <MudItem xs=@( Label == null ? 9 : 7 )>
-        <MudInput FullWidth="true" Margin="Margin.None" Class="d-flex flex-grow-1" @bind-Value=@Text />
-    </MudItem>
-    <MudItem xs="3">
-        <MudRating Class="d-flex justify-end"
+    @if (Text != null)
+    {
+        <MudItem xs=@( Label == null ? 9 : Value == null ? 10 : 7 )>
+            <MudInput FullWidth="true" Margin="Margin.None" Class="d-flex flex-grow-1" @bind-Value=@Text />
+        </MudItem>
+    }
+    @if (Value != null)
+    {
+        <MudItem xs="3">
+            <MudRating Class="d-flex justify-end"
                    Size="Size.Medium"
                    Color="Color.Dark"
                    MaxValue="5"
                    FullIcon="@Icons.Material.Filled.Circle"
                    EmptyIcon="@Icons.Material.Outlined.Circle"
-                   @bind-SelectedValue=@Value />
-    </MudItem>
+                   SelectedValue="@(Value == null ? 0 : (int)Value)"
+                   SelectedValueChanged="@(value => Value = value)" />
+        </MudItem>
+    }
 </MudGrid>

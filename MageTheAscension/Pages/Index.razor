@@ -1,11 +1,31 @@
 ﻿@page "/"
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge">
-    <MudText Typo="Typo.h3" Align="Align.Center">Mage The Ascension</MudText>
-    <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">20th Anniversary Edition</MudText>
-
+    <!-- #region Header -->
+    <MudCard Elevation="0">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h3" Align="Align.Center">Mage The Ascension</MudText>
+                <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">20th Anniversary Edition</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudGrid Spacing="1">
+                <MudItem xs="4">
+                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
+                </MudItem>
+                <MudItem xs="4">
+                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
+                </MudItem>
+                <MudItem xs="4">
+                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+    </MudCard>
+    <!-- #endregion Header -->
     <!-- #region Attributes -->
-    <MudCard Elevation="25" Class="rounded-lg pb-4">
+    <MudCard Elevation="0">
         <MudCardHeader>
             <CardHeaderContent>
                 <MudText Typo="Typo.h4" Align="Align.Center">Attributes</MudText>
@@ -14,53 +34,20 @@
         <MudCardContent>
             <MudGrid Spacing="1">
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Physical</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Strength)" Text="" @bind-Value=@Sheet.Strength />
-                            <Rating Label="@nameof(Sheet.Dexterity)" Text="" @bind-Value=@Sheet.Dexterity />
-                            <Rating Label="@nameof(Sheet.Stamina)" Text="" @bind-Value=@Sheet.Stamina />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Physical" Characteristics="@Sheet.Physical" />
                 </MudItem>
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Social</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Charisma)" Text="" @bind-Value=@Sheet.Charisma />
-                            <Rating Label="@nameof(Sheet.Manipulation)" Text="" @bind-Value=@Sheet.Manipulation />
-                            <Rating Label="@nameof(Sheet.Appearance)" Text="" @bind-Value=@Sheet.Appearance />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Social" Characteristics="@Sheet.Social" />
                 </MudItem>
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Mental</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Perception)" Text="" @bind-Value=@Sheet.Perception />
-                            <Rating Label="@nameof(Sheet.Intelligence)" Text="" @bind-Value=@Sheet.Intelligence />
-                            <Rating Label="@nameof(Sheet.Wits)" Text="" @bind-Value=@Sheet.Wits />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Mental" Characteristics="@Sheet.Mental" />
                 </MudItem>
             </MudGrid>
         </MudCardContent>
     </MudCard>
     <!-- #endregion Attributes -->
     <!-- #region Abilities -->
-    <MudCard Elevation="25" Class="rounded-lg pb-4">
+    <MudCard Elevation="0">
         <MudCardHeader>
             <CardHeaderContent>
                 <MudText Typo="Typo.h4" Align="Align.Center">Abilities</MudText>
@@ -69,77 +56,20 @@
         <MudCardContent>
             <MudGrid Spacing="1">
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Talents</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Alertness)" Text="" @bind-Value=@Sheet.Alertness />
-                            <Rating Label="@nameof(Sheet.Art)" Text="" @bind-Value=@Sheet.Art />
-                            <Rating Label="@nameof(Sheet.Athletics)" Text="" @bind-Value=@Sheet.Athletics />
-                            <Rating Label="@nameof(Sheet.Awareness)" Text="" @bind-Value=@Sheet.Awareness />
-                            <Rating Label="@nameof(Sheet.Brawl)" Text="" @bind-Value=@Sheet.Brawl />
-                            <Rating Label="@nameof(Sheet.Empathy)" Text="" @bind-Value=@Sheet.Empathy />
-                            <Rating Label="@nameof(Sheet.Expression)" Text="" @bind-Value=@Sheet.Expression />
-                            <Rating Label="@nameof(Sheet.Intimidation)" Text="" @bind-Value=@Sheet.Intimidation />
-                            <Rating Label="@nameof(Sheet.Leadership)" Text="" @bind-Value=@Sheet.Leadership />
-                            <Rating Label="@nameof(Sheet.Streetwise)" Text="" @bind-Value=@Sheet.Streetwise />
-                            <Rating Label="@nameof(Sheet.Subterfuge)" Text="" @bind-Value=@Sheet.Subterfuge />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Talents" Characteristics="@Sheet.Talents" />
                 </MudItem>
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Skills</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Crafts)" Text="" @bind-Value=@Sheet.Crafts />
-                            <Rating Label="@nameof(Sheet.Drive)" Text="" @bind-Value=@Sheet.Drive />
-                            <Rating Label="@nameof(Sheet.Etiquette)" Text="" @bind-Value=@Sheet.Etiquette />
-                            <Rating Label="@nameof(Sheet.Firearms)" Text="" @bind-Value=@Sheet.Firearms />
-                            <Rating Label="@nameof(Sheet.MartialArts)" Text="" @bind-Value=@Sheet.MartialArts />
-                            <Rating Label="@nameof(Sheet.Meditation)" Text="" @bind-Value=@Sheet.Meditation />
-                            <Rating Label="@nameof(Sheet.Melee)" Text="" @bind-Value=@Sheet.Melee />
-                            <Rating Label="@nameof(Sheet.Research)" Text="" @bind-Value=@Sheet.Research />
-                            <Rating Label="@nameof(Sheet.Stealth)" Text="" @bind-Value=@Sheet.Stealth />
-                            <Rating Label="@nameof(Sheet.Survival)" Text="" @bind-Value=@Sheet.Survival />
-                            <Rating Label="@nameof(Sheet.Technology)" Text="" @bind-Value=@Sheet.Technology />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Skills" Characteristics="@Sheet.Skills" />
                 </MudItem>
                 <MudItem xs="4">
-                    <MudCard Elevation="25" Class="rounded-lg pb-4">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h5" Align="Align.Center">Knowledges</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <Rating Label="@nameof(Sheet.Academics)" Text="" @bind-Value=@Sheet.Academics />
-                            <Rating Label="@nameof(Sheet.Computer)" Text="" @bind-Value=@Sheet.Computer />
-                            <Rating Label="@nameof(Sheet.Cosmology)" Text="" @bind-Value=@Sheet.Cosmology />
-                            <Rating Label="@nameof(Sheet.Enigmas)" Text="" @bind-Value=@Sheet.Enigmas />
-                            <Rating Label="@nameof(Sheet.Esoterica)" Text="" @bind-Value=@Sheet.Esoterica />
-                            <Rating Label="@nameof(Sheet.Investigation)" Text="" @bind-Value=@Sheet.Investigation />
-                            <Rating Label="@nameof(Sheet.Law)" Text="" @bind-Value=@Sheet.Law />
-                            <Rating Label="@nameof(Sheet.Medicine)" Text="" @bind-Value=@Sheet.Medicine />
-                            <Rating Label="@nameof(Sheet.Occult)" Text="" @bind-Value=@Sheet.Occult />
-                            <Rating Label="@nameof(Sheet.Politics)" Text="" @bind-Value=@Sheet.Politics />
-                            <Rating Label="@nameof(Sheet.Science)" Text="" @bind-Value=@Sheet.Science />
-                        </MudCardContent>
-                    </MudCard>
+                    <RatingColumn Title="Knowledges" Characteristics="@Sheet.Knowledges" />
                 </MudItem>
             </MudGrid>
         </MudCardContent>
     </MudCard>
     <!-- #endregion Abilities -->
     <!-- #region Spheres -->
-    <MudCard Elevation="25" Class="rounded-lg pb-4">
+    <MudCard Elevation="0">
         <MudCardHeader>
             <CardHeaderContent>
                 <MudText Typo="Typo.h4" Align="Align.Center">Spheres</MudText>
@@ -148,19 +78,13 @@
         <MudCardContent>
             <MudGrid Spacing="1">
                 <MudItem xs="4">
-                    <Rating Label="@nameof(Sheet.Correspondence)" Text="" @bind-Value=@Sheet.Correspondence />
-                    <Rating Label="@nameof(Sheet.Entropy)" Text="" @bind-Value=@Sheet.Entropy />
-                    <Rating Label="@nameof(Sheet.Forces)" Text="" @bind-Value=@Sheet.Forces />
+                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(0, 3)" />
                 </MudItem>
                 <MudItem xs="4">
-                    <Rating Label="@nameof(Sheet.Life)" Text="" @bind-Value=@Sheet.Life />
-                    <Rating Label="@nameof(Sheet.Matter)" Text="" @bind-Value=@Sheet.Matter />
-                    <Rating Label="@nameof(Sheet.Mind)" Text="" @bind-Value=@Sheet.Mind />
+                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(3, 3)" />
                 </MudItem>
                 <MudItem xs="4">
-                    <Rating Label="@nameof(Sheet.Prime)" Text="" @bind-Value=@Sheet.Prime />
-                    <Rating Label="@nameof(Sheet.Spirit)" Text="" @bind-Value=@Sheet.Spirit />
-                    <Rating Label="@nameof(Sheet.Time)" Text="" @bind-Value=@Sheet.Time />
+                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(6, 3)" />
                 </MudItem>
             </MudGrid>
         </MudCardContent>
