@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Usage", "BL0007:Component parameters should be auto properties")]
+[assembly: SuppressMessage("Style", "IDE0090:Use 'new(...)'")]

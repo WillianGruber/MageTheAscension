@@ -1,94 +1,65 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.Forms;
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="d-flex justify-end gap-4">
+    <MudFileUpload T="IBrowserFile" FilesChanged="@UploadFile" Class="mt-0">
+        <ButtonTemplate>
+            <MudButton Color="Color.Primary" Variant="Variant.Filled" HtmlTag="label" StartIcon="@Icons.Material.Filled.FileUpload" for="@context">
+                Upload Sheet
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+    <MudButton Color="Color.Primary" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.FileDownload" OnClick="@DownloadFile" Class="mr-4">
+        Download Sheet
+    </MudButton>
+</MudContainer>
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge">
-    <!-- #region Header -->
+    <MudText Typo="Typo.h3" Align="Align.Center">Mage The Ascension</MudText>
+    <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">20th Anniversary Edition</MudText>
+    <TriColumnCard LeftColumn="@Sheet.Header.GetRange(0, 3)" MidColumn="@Sheet.Header.GetRange(3, 3)" RightColumn="@Sheet.Header.GetRange(6, 3)" />
+    <TriColumnCard HeaderTitle="Attributes" LeftColumn="@Sheet.Physical" LeftColumnTitle="Physical" MidColumn="@Sheet.Social" MidColumnTitle="Social" RightColumn="@Sheet.Mental" RightColumnTitle="Mental" />
+    <TriColumnCard HeaderTitle="Abilities" LeftColumn="@Sheet.Talents" LeftColumnTitle="Talents" MidColumn="@Sheet.Skills" MidColumnTitle="Skills" RightColumn="@Sheet.Knowledges" RightColumnTitle="Knowledges" />
+    <TriColumnCard HeaderTitle="Spheres" LeftColumn="@Sheet.Spheres.GetRange(0, 3)" MidColumn="@Sheet.Spheres.GetRange(3, 3)" RightColumn="@Sheet.Spheres.GetRange(6, 3)" />
     <MudCard Elevation="0">
-        <MudCardHeader>
+        <MudCardHeader Class="pb-0">
             <CardHeaderContent>
-                <MudText Typo="Typo.h3" Align="Align.Center">Mage The Ascension</MudText>
-                <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">20th Anniversary Edition</MudText>
+                <MudText Typo="Typo.h4" Align="Align.Center">Advantages</MudText>
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent>
             <MudGrid Spacing="1">
                 <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
+                    <RatingColumn Title="Backgrounds" Characteristics="@Sheet.Backgrounds" />
+                    <RatingColumn Title="OtherTraits" Characteristics="@Sheet.OtherTraits" />
                 </MudItem>
                 <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
+                    <MudCard Elevation="3" Class="rounded-lg mt-2">
+                        <MudCardHeader Class="pb-0">
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5" Align="Align.Center">Arete</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <Rating @bind-Value="@Sheet.Arete.Value" MaxValue="@Sheet.Arete.MaxValue" />
+                        </MudCardContent>
+                    </MudCard>
+                    <MudCard Elevation="3" Class="rounded-lg mt-2">
+                        <MudCardHeader Class="pb-0">
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5" Align="Align.Center">Willpower</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <Rating @bind-Value="@Sheet.WillpowerMax.Value" MaxValue="@Sheet.WillpowerMax.MaxValue" />
+                            <Rating @bind-Value="@Sheet.WillpowerActual.Value" MaxValue="@Sheet.WillpowerActual.MaxValue" />
+                        </MudCardContent>
+                    </MudCard>
                 </MudItem>
                 <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Header.GetRange(0, 3)" />
                 </MudItem>
             </MudGrid>
         </MudCardContent>
     </MudCard>
-    <!-- #endregion Header -->
-    <!-- #region Attributes -->
-    <MudCard Elevation="0">
-        <MudCardHeader>
-            <CardHeaderContent>
-                <MudText Typo="Typo.h4" Align="Align.Center">Attributes</MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent>
-            <MudGrid Spacing="1">
-                <MudItem xs="4">
-                    <RatingColumn Title="Physical" Characteristics="@Sheet.Physical" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Title="Social" Characteristics="@Sheet.Social" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Title="Mental" Characteristics="@Sheet.Mental" />
-                </MudItem>
-            </MudGrid>
-        </MudCardContent>
-    </MudCard>
-    <!-- #endregion Attributes -->
-    <!-- #region Abilities -->
-    <MudCard Elevation="0">
-        <MudCardHeader>
-            <CardHeaderContent>
-                <MudText Typo="Typo.h4" Align="Align.Center">Abilities</MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent>
-            <MudGrid Spacing="1">
-                <MudItem xs="4">
-                    <RatingColumn Title="Talents" Characteristics="@Sheet.Talents" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Title="Skills" Characteristics="@Sheet.Skills" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Title="Knowledges" Characteristics="@Sheet.Knowledges" />
-                </MudItem>
-            </MudGrid>
-        </MudCardContent>
-    </MudCard>
-    <!-- #endregion Abilities -->
-    <!-- #region Spheres -->
-    <MudCard Elevation="0">
-        <MudCardHeader>
-            <CardHeaderContent>
-                <MudText Typo="Typo.h4" Align="Align.Center">Spheres</MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent>
-            <MudGrid Spacing="1">
-                <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(0, 3)" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(3, 3)" />
-                </MudItem>
-                <MudItem xs="4">
-                    <RatingColumn Characteristics="@Sheet.Spheres.GetRange(6, 3)" />
-                </MudItem>
-            </MudGrid>
-        </MudCardContent>
-    </MudCard>
-    <!-- #endregion Spheres -->
 
 </MudContainer>

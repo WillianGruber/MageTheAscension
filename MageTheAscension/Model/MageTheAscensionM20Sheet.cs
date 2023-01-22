@@ -81,9 +81,9 @@ namespace MageTheAscension.Model
         public Characteristic Time { get; set; } = new Characteristic { Label = "Time", Text = string.Empty, Value = 0 };
 
         //Advantages
-        public Characteristic Arete { get; set; } = new Characteristic { Label = "Arete", Value = 1 };
-        public Characteristic WillpowerMax { get; set; } = new Characteristic { Label = "WillpowerMax" };
-        public Characteristic WillpowerActual { get; set; } = new Characteristic { Label = "WillpowerActual" };
+        public Characteristic Arete { get; set; } = new Characteristic { Label = "Arete", Value = 1, MaxValue = 10 };
+        public Characteristic WillpowerMax { get; set; } = new Characteristic { Label = "Maximum Willpower", Value = 0, MaxValue = 10 };
+        public Characteristic WillpowerActual { get; set; } = new Characteristic { Label = "Actual Willpower", Value = 0, MaxValue = 10 };
         public Characteristic Quintessence { get; set; } = new Characteristic { Label = "Quintessence" };
         public Characteristic Paradox { get; set; } = new Characteristic { Label = "Paradox" };
 
@@ -96,6 +96,8 @@ namespace MageTheAscension.Model
         public List<Characteristic> Skills { get; set; }
         public List<Characteristic> Knowledges { get; set; }
         public List<Characteristic> Spheres { get; set; }
+        public List<Characteristic> Backgrounds { get; set; }
+        public List<Characteristic> OtherTraits { get; set; }
 
         public MageTheAscensionM20Sheet()
         {
@@ -107,6 +109,8 @@ namespace MageTheAscension.Model
             Skills = new List<Characteristic> { Crafts, Drive, Etiquette, Firearms, MartialArts, Meditation, Melee, Research, Stealth, Survival, Technology };
             Knowledges = new List<Characteristic> { Academics, Computer, Cosmology, Enigmas, Esoterica, Investigation, Law, Medicine, Occult, Politics, Science };
             Spheres = new List<Characteristic> { Correspondence, Entropy, Forces, Life, Matter, Mind, Prime, Spirit, Time };
+            Backgrounds = new List<Characteristic> { };
+            OtherTraits = new List<Characteristic> { };
         }
     }
 }

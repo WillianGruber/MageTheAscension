@@ -1,0 +1,23 @@
+﻿<MudCard Elevation="0">
+    @if (!string.IsNullOrEmpty(HeaderTitle))
+    {
+        <MudCardHeader Class="pb-0">
+            <CardHeaderContent>
+                <MudText Typo="Typo.h4" Align="Align.Center">@HeaderTitle</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+    }
+    <MudCardContent>
+        <MudGrid Spacing="1">
+            <MudItem xs="4">
+                <RatingColumn Title="@LeftColumnTitle" Characteristics="@LeftColumn" />
+            </MudItem>
+            <MudItem xs="4">
+                <RatingColumn Title="@MidColumnTitle" Characteristics="@MidColumn" />
+            </MudItem>
+            <MudItem xs="4">
+                <RatingColumn Title="@RightColumnTitle" Characteristics="@RightColumn" />
+            </MudItem>
+        </MudGrid>
+    </MudCardContent>
+</MudCard>
