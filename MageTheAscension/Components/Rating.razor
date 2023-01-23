@@ -20,8 +20,8 @@
                    Size="Size.Medium"
                    Color="Color.Dark"
                    MaxValue="@(MaxValue.GetValueOrDefault())"
-                   FullIcon="@Icons.Material.Filled.Circle"
-                   EmptyIcon="@Icons.Material.Outlined.Circle"
+                   FullIcon="@FullIcon"
+                   EmptyIcon="@EmptyIcon"
                    SelectedValue="@(Value.GetValueOrDefault())"
                    SelectedValueChanged="@(value => Value = value)" />
         </MudItem>

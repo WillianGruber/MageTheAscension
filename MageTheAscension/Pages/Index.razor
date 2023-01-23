@@ -41,7 +41,7 @@
                             </CardHeaderContent>
                         </MudCardHeader>
                         <MudCardContent>
-                            <Rating @bind-Value="@Sheet.Arete.Value" MaxValue="@Sheet.Arete.MaxValue" />
+                            <Rating @bind-Value="@Sheet.Arete.Value" MaxValue="@Sheet.Arete.MaxValue" EmptyIcon="@Sheet.Arete.EmptyIcon" FullIcon="@Sheet.Arete.FullIcon"/>
                         </MudCardContent>
                     </MudCard>
                     <MudCard Elevation="3" Class="rounded-lg mt-2">
@@ -51,8 +51,8 @@
                             </CardHeaderContent>
                         </MudCardHeader>
                         <MudCardContent>
-                            <Rating @bind-Value="@Sheet.WillpowerMax.Value" MaxValue="@Sheet.WillpowerMax.MaxValue" />
-                            <Rating @bind-Value="@Sheet.WillpowerActual.Value" MaxValue="@Sheet.WillpowerActual.MaxValue" />
+                            <Rating @bind-Value="@Sheet.WillpowerMax.Value" MaxValue="@Sheet.WillpowerMax.MaxValue" EmptyIcon="@Sheet.WillpowerMax.EmptyIcon" FullIcon="@Sheet.WillpowerMax.FullIcon" />
+                            <Rating @bind-Value="@Sheet.WillpowerActual.Value" MaxValue="@Sheet.WillpowerActual.MaxValue" EmptyIcon="@Sheet.WillpowerActual.EmptyIcon" FullIcon="@Sheet.WillpowerActual.FullIcon" />
                         </MudCardContent>
                     </MudCard>
                 </MudItem>
@@ -61,5 +61,4 @@
             </MudGrid>
         </MudCardContent>
     </MudCard>
-
 </MudContainer>

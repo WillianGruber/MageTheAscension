@@ -10,6 +10,8 @@ namespace MageTheAscension.Components
         [Parameter] public int? Value { get => _value; set { if (value == _value) return; _value = value; ValueChanged.InvokeAsync(value); } }
         [Parameter] public EventCallback<int?> ValueChanged { get; set; }
         [Parameter] public int? MaxValue { get; set; }
+        [Parameter] public string? FullIcon { get; set; }
+        [Parameter] public string? EmptyIcon { get; set; }
 
         private int? _value;
         private string? _text;

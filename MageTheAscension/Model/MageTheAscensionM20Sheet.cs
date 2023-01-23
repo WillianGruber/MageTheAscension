@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MudBlazor;
+using System.Collections.Generic;
 
 namespace MageTheAscension.Model
 {
@@ -83,7 +84,7 @@ namespace MageTheAscension.Model
         //Advantages
         public Characteristic Arete { get; set; } = new Characteristic { Label = "Arete", Value = 1, MaxValue = 10 };
         public Characteristic WillpowerMax { get; set; } = new Characteristic { Label = "Maximum Willpower", Value = 0, MaxValue = 10 };
-        public Characteristic WillpowerActual { get; set; } = new Characteristic { Label = "Actual Willpower", Value = 0, MaxValue = 10 };
+        public Characteristic WillpowerActual { get; set; } = new Characteristic { Label = "Actual Willpower", Value = 0, MaxValue = 10, EmptyIcon = Icons.Material.Outlined.Square, FullIcon = Icons.Material.Filled.Square };
         public Characteristic Quintessence { get; set; } = new Characteristic { Label = "Quintessence" };
         public Characteristic Paradox { get; set; } = new Characteristic { Label = "Paradox" };
 
