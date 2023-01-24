@@ -10,7 +10,9 @@
     @if (Text != null)
     {
         <MudItem xs=@( Label == null || Value == null ? 9 : 6 )>
-            <MudInput FullWidth="true" Margin="Margin.None" Class="d-flex flex-grow-1" @bind-Value=@Text />
+            <div class="d-flex">
+                <MudInput FullWidth="true" Margin="Margin.None" Class="flex-grow-1" @bind-Value=@Text />
+            </div>
         </MudItem>
     }
     @if (Value != null)
