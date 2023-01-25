@@ -1,5 +1,7 @@
 ﻿using MudBlazor;
 using System.Collections.Generic;
+using static MudBlazor.Colors;
+using System.ComponentModel;
 
 namespace MageTheAscension.Model
 {
@@ -71,15 +73,15 @@ namespace MageTheAscension.Model
         public Characteristic Science { get; set; } = new Characteristic { Label = "Science", Text = string.Empty, Value = 0 };
 
         //Spheres
-        public Characteristic Correspondence { get; set; } = new Characteristic { Label = "Correspondence", Text = string.Empty, Value = 0 };
-        public Characteristic Entropy { get; set; } = new Characteristic { Label = "Entropy", Text = string.Empty, Value = 0 };
-        public Characteristic Forces { get; set; } = new Characteristic { Label = "Forces", Text = string.Empty, Value = 0 };
-        public Characteristic Life { get; set; } = new Characteristic { Label = "Life", Text = string.Empty, Value = 0 };
-        public Characteristic Matter { get; set; } = new Characteristic { Label = "Matter", Text = string.Empty, Value = 0 };
-        public Characteristic Mind { get; set; } = new Characteristic { Label = "Mind", Text = string.Empty, Value = 0 };
-        public Characteristic Prime { get; set; } = new Characteristic { Label = "Prime", Text = string.Empty, Value = 0 };
-        public Characteristic Spirit { get; set; } = new Characteristic { Label = "Spirit", Text = string.Empty, Value = 0 };
-        public Characteristic Time { get; set; } = new Characteristic { Label = "Time", Text = string.Empty, Value = 0 };
+        public Characteristic Correspondence { get; set; } = new Characteristic { Label = "Correspondence", Text = string.Empty, Value = 0, Color=Purple.Default };
+        public Characteristic Entropy { get; set; } = new Characteristic { Label = "Entropy", Text = string.Empty, Value = 0, Color=Indigo.Default };
+        public Characteristic Forces { get; set; } = new Characteristic { Label = "Forces", Text = string.Empty, Value = 0, Color=DeepOrange.Default };
+        public Characteristic Life { get; set; } = new Characteristic { Label = "Life", Text = string.Empty, Value = 0, Color=Red.Darken1 };
+        public Characteristic Matter { get; set; } = new Characteristic { Label = "Matter", Text = string.Empty, Value = 0, Color=Brown.Default };
+        public Characteristic Mind { get; set; } = new Characteristic { Label = "Mind", Text = string.Empty, Value = 0, Color=Blue.Default };
+        public Characteristic Prime { get; set; } = new Characteristic { Label = "Prime", Text = string.Empty, Value = 0, Color=Grey.Lighten1 };
+        public Characteristic Spirit { get; set; } = new Characteristic { Label = "Spirit", Text = string.Empty, Value = 0, Color=Amber.Default };
+        public Characteristic Time { get; set; } = new Characteristic { Label = "Time", Text = string.Empty, Value = 0, Color=Green.Default };
 
         //Advantages
         public Characteristic Arete { get; set; } = new Characteristic { Label = "Arete", Value = 1, MaxValue = 10 };

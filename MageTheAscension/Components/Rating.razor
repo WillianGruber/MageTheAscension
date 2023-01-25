@@ -18,14 +18,15 @@
     @if (Value != null)
     {
         <MudItem xs=@( Label == null && Text == null ? 12 : 3 )>
-            <MudRating Class="@( Label != null || Text != null ? "d-flex justify-end" : "d-flex justify-center gap-x-4" )"
-                   Size="Size.Medium"
-                   Color="Color.Dark"
-                   MaxValue="@(MaxValue.GetValueOrDefault())"
-                   FullIcon="@FullIcon"
-                   EmptyIcon="@EmptyIcon"
-                   SelectedValue="@(Value.GetValueOrDefault())"
-                   SelectedValueChanged="@(value => Value = value)" />
+            <MudRating
+                Class="@( Label != null || Text != null ? "d-flex justify-end" : "d-flex justify-center gap-x-4" )"
+                Style="@($"color:{Color};")"
+                Size="Size.Medium"
+                MaxValue="@(MaxValue.GetValueOrDefault())"
+                FullIcon="@FullIcon"
+                EmptyIcon="@EmptyIcon"
+                SelectedValue="@(Value.GetValueOrDefault())"
+                SelectedValueChanged="@(value => Value = value)" />
         </MudItem>
     }
 </MudGrid>

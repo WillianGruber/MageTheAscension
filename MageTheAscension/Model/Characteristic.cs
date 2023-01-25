@@ -10,5 +10,6 @@ namespace MageTheAscension.Model
         public int? MaxValue { get; set; } = 5;
         public string? FullIcon { get; set; } = Icons.Material.Filled.Circle;
         public string? EmptyIcon { get; set; } = Icons.Material.Outlined.Circle;
+        public string Color { get; set; } = Colors.Shades.Black;
     }
 }

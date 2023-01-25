@@ -12,6 +12,7 @@ namespace MageTheAscension.Components
         [Parameter] public int? MaxValue { get; set; }
         [Parameter] public string? FullIcon { get; set; }
         [Parameter] public string? EmptyIcon { get; set; }
+        [Parameter] public string? Color { get; set; }
 
         private int? _value;
         private string? _text;

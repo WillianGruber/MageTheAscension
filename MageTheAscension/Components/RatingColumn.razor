@@ -10,7 +10,14 @@
     <MudCardContent>
         @foreach (Characteristic characteristic in Characteristics!)
         {
-            <Rating Label="@characteristic.Label" @bind-Text="@characteristic.Text" @bind-Value="@characteristic.Value" MaxValue="@characteristic.MaxValue" EmptyIcon="@characteristic.EmptyIcon" FullIcon="@characteristic.FullIcon" />
+            <Rating
+                Label="@characteristic.Label"
+                @bind-Text="@characteristic.Text"
+                @bind-Value="@characteristic.Value"
+                MaxValue="@characteristic.MaxValue"
+                EmptyIcon="@characteristic.EmptyIcon"
+                FullIcon="@characteristic.FullIcon"
+                Color="@characteristic.Color"/>
         }
     </MudCardContent>
 </MudCard>
