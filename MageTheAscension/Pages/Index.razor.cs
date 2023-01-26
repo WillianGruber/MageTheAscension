@@ -11,7 +11,8 @@ namespace MageTheAscension.Pages
     {
         public MageTheAscensionM20Sheet Sheet { get; set; } = new MageTheAscensionM20Sheet();
         [Inject] IBlazorDownloadFileService? BlazorDownloadFileService { get; set; }
-
+        [Inject] private ThemeService? ThemeService { get; set; }
+        
         private async void DownloadFile()
         {
             string fileName = string.IsNullOrWhiteSpace(Sheet.Name.Text) ? "Unknown Character.mta" : Sheet.Name.Text + ".mta";
@@ -22,6 +23,11 @@ namespace MageTheAscension.Pages
         {
             using Stream stream = file.OpenReadStream(1024000 * 10);
             Sheet = await JsonSerializer.DeserializeAsync<MageTheAscensionM20Sheet>(stream) ?? Sheet;
+            StateHasChanged();
+        }
+        private void ToggleDarkMode()
+        {
+            ThemeService!.ToggleDarkMode();
             StateHasChanged();
         }
     }
